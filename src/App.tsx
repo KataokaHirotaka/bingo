@@ -1,26 +1,24 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { Button } from "components/button";
+import { Number } from "components/number";
+import { Panel } from "components/panel";
+import { useEffect, useState } from "react";
 
-function App() {
+export const App = () => {
+  const [isClick, setIsClick] = useState<boolean>(false);
+  useEffect(() => {
+    if (isClick) {
+    }
+  }, [isClick]);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Panel isClick={isClick} />
+      <div className="btn_wrapper">
+        <Button id="" isClick={isClick} setIsClick={setIsClick} />
+      </div>
+      <Number />
+      <div className="btn_wrapper">
+        <Button id="reset" />
+      </div>
+    </>
   );
-}
-
-export default App;
+};
