@@ -1,11 +1,15 @@
 import "./index.scss";
 
-export const Number = () => {
+type Props = {
+  maxNum: number;
+}
+
+export const Number = (props: Props) => {
   let num: number[] = [];
-  for (let i = 1; i <= 75; i++) {
+  for (let i = 1; i <= props.maxNum; i++) {
     num.push(i);
   }
-  console.log(num, 999);
+  // console.log(num, 999);
   return (
     <div className="num_wrapper">
       {num.map((val) => {

@@ -4,9 +4,12 @@ import { Panel } from "components/panel";
 import { useEffect, useState } from "react";
 
 export const App = () => {
+  const maxNum: number = 75;
   const [isClick, setIsClick] = useState<boolean>(false);
+  const [num, setNum] = useState<number>();
   useEffect(() => {
     if (isClick) {
+      // setNum
     }
   }, [isClick]);
   return (
@@ -15,7 +18,7 @@ export const App = () => {
       <div className="btn_wrapper">
         <Button id="" isClick={isClick} setIsClick={setIsClick} />
       </div>
-      <Number />
+      <Number maxNum={maxNum}/>
       <div className="btn_wrapper">
         <Button id="reset" />
       </div>
